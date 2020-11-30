@@ -124,5 +124,8 @@
       }
     }
   },
-  "defaultProject": "s2f-transfert-front"
+  "defaultProject": "s2f-transfert-front",
+  "cli": {
+    "analytics": "e43872ea-11b8-4016-bb9a-d3d754c37bc9"
+  }
 }
