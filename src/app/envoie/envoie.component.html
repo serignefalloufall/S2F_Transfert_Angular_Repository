@@ -1,73 +1,102 @@
-<div class="container register">
-    <div class="row">
-        <div class="col-md-3 register-left">
-            <img src="https://image.ibb.co/n7oTvU/logo_white.png" alt=""/>
-            <h3>Bienvenue</h3>
-            <p>Chez S2F-Transfert</p>
-        </div>
-        <div class="col-md-9 register-right">
-           
-            <div class="tab-content" id="myTabContent">
-                <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-                    <h3 class="register-heading">Enregistrer un envoie</h3>
-                   <form #myForm="ngForm" action="">
-                    <div class="row register-form">
-                        
-                        <div class="col-md-6">
 
-                            <div class="form-group">
-                                <input [(ngModel)]="emeteur.nom" name="nomEmeteur" type="text" class="form-control" placeholder="Nom emeteur *" value="" />
-                            </div>
-
-                            <div class="form-group">
-                                <input [(ngModel)]="emeteur.prenom" name="prenomEmeteur" type="text" class="form-control" placeholder="Prenom emeteur *" value="" />
-                            </div>
-
-                            <div class="form-group">
-                                <input [(ngModel)]="emeteur.tel" name="telEmeteur" type="text" class="form-control" placeholder="Telephone emeteur *" value="" />
-                            </div>
-
-                            <div class="form-group">
-                                <input [(ngModel)]="emeteur.cni" name="cniEmeteur" type="text" class="form-control" placeholder="CNI emeteur *" value="" />
-                            </div>
-
-                            <div class="form-group">
-                                <input [(ngModel)]="envoie.date" name="date" type="date" class="form-control" value="" />
-                            </div>
-
-                           
-                        </div>
-
-                        <div class="col-md-6">
-
-                            <div class="form-group">
-                                <input [(ngModel)]="recepteur.nom" name="nomRecepteur" type="text" class="form-control" placeholder="Nom recepteur *" value="" />
-                            </div>
-
-                            <div class="form-group">
-                                <input [(ngModel)]="recepteur.prenom" name="prenomRecepteur" type="text" class="form-control" placeholder="Prenom recepteur *" value="" />
-                            </div>
-
-                            <div class="form-group">
-                                <input [(ngModel)]="recepteur.tel" name="telRecepteur" type="text" class="form-control" placeholder="Telephone recepteur *" value="" />
-                            </div>
-
-                            <div class="form-group">
-                                <input [(ngModel)]="envoie.montant" name="montant" type="text" class="form-control" placeholder="Montant *" value="" />
-                            </div>
-
-                            <div class="form-group">
-                                <input (click)="saveEnvoie()" type="submit" class="btnRegister"  value="Enregistrer"/>
-                            </div>
-
-                            
-                        </div>
-                    </div>
-                   </form>
-                </div>
+<div *ngIf="navigation_url === '/envoie'">
+    <div class="container register">
+        <div class="row">
+            <div class="col-md-3 register-left">
+                <img src="https://image.ibb.co/n7oTvU/logo_white.png" alt=""/>
+                <h3>Bienvenue</h3>
+                <p>Chez S2F-Transfert</p>
+            </div>
+            <div class="col-md-9 register-right">
                
+                <div class="tab-content" id="myTabContent">
+                    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                        <h3 class="register-heading">Enregistrer un envoie</h3>
+                       <form>
+                        <div class="row register-form">
+                            
+                            <div class="col-md-6">
+    
+                                <div class="form-group">
+                                    <input [(ngModel)]="emeteur.nom" name="nomEmeteur" type="text" class="form-control" placeholder="Nom emeteur *" value="" />
+                                </div>
+    
+                                <div class="form-group">
+                                    <input [(ngModel)]="emeteur.prenom" name="prenomEmeteur" type="text" class="form-control" placeholder="Prenom emeteur *" value="" />
+                                </div>
+    
+                                <div class="form-group">
+                                    <input [(ngModel)]="emeteur.tel" name="telEmeteur" type="text" class="form-control" placeholder="Telephone emeteur *" value="" />
+                                </div>
+    
+                                <div class="form-group">
+                                    <input [(ngModel)]="emeteur.cni" name="cniEmeteur" type="text" class="form-control" placeholder="CNI emeteur *" value="" />
+                                </div>
+    
+                                <div class="form-group">
+                                    <input [(ngModel)]="envoie.date" name="date" type="date" class="form-control" value="" />
+                                </div>
+    
+                               
+                            </div>
+    
+                            <div class="col-md-6">
+    
+                                <div class="form-group">
+                                    <input [(ngModel)]="recepteur.nom" name="nomRecepteur" type="text" class="form-control" placeholder="Nom recepteur *" value="" />
+                                </div>
+    
+                                <div class="form-group">
+                                    <input [(ngModel)]="recepteur.prenom" name="prenomRecepteur" type="text" class="form-control" placeholder="Prenom recepteur *" value="" />
+                                </div>
+    
+                                <div class="form-group">
+                                    <input [(ngModel)]="recepteur.tel" name="telRecepteur" type="text" class="form-control" placeholder="Telephone recepteur *" value="" />
+                                </div>
+    
+                                <div class="form-group">
+                                    <input [(ngModel)]="envoie.montant" name="montant" type="text" class="form-control" placeholder="Montant *" value="" />
+                                </div>
+    
+                                <div class="form-group">
+                                    <input (click)="saveEnvoie()" type="submit" class="btnRegister"  value="Enregistrer"/>
+                                </div>
+    
+                                
+                            </div>
+                        </div>
+                       </form>
+                    </div>
+                   
+                </div>
             </div>
         </div>
-    </div>
+    
+    </div>    
+</div>
 
+
+<div *ngIf="navigation_url === '/liste'">
+    <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col">Identifiant</th>
+            <th scope="col">Date d'envoie</th>
+            <th scope="col">Montant envoye</th>
+            <th scope="col">Emeteur</th>
+            <th scope="col">Recepteur</th>
+
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor='let env of listeEnvoie'>
+            <th scope="row">{{env.id}}</th>
+            <td>{{env.date}}</td>
+            <td>{{env.montant}}</td>
+            <td>{{env.emeteur.prenom}} {{env.emeteur.nom}}</td>
+            <td>{{env.recepteur.prenom}} {{env.recepteur.nom}}</td>
+
+          </tr>
+        </tbody>
+      </table>
 </div>

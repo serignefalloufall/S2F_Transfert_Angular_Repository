@@ -16,4 +16,10 @@ export class EnvoieService {
 
     return this.http.post(this.url+'add',infoModel);
   }
+
+  findAllEnvoie(){
+
+    return this.http.get<any>(this.url + 'allEnvoie');
+
+  }
 }
